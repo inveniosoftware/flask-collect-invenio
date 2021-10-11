@@ -10,14 +10,15 @@
 
 """Copy files from all static folders to root folder."""
 
-from os import path as op, makedirs, remove
+from os import makedirs
+from os import path as op
+from os import remove
 from shutil import copy
 
 from .base import BaseStorage
 
 
 class Storage(BaseStorage):
-
     """Storage that copies static files."""
 
     def run(self):
@@ -39,6 +40,8 @@ class Storage(BaseStorage):
                 remove(destination)
 
             copy(f, destination)
-            self.log("Copied: [{0}] '{1}'".format(
-                bp.name, op.join(self.collect.static_url, destination)
-            ))
+            self.log(
+                "Copied: [{0}] '{1}'".format(
+                    bp.name, op.join(self.collect.static_url, destination)
+                )
+            )

@@ -15,11 +15,11 @@ reflected.
 """
 
 import os
+
 from .base import BaseStorage
 
 
 class Storage(BaseStorage):
-
     """Storage that creates symlinks to the resources."""
 
     def run(self):
@@ -39,8 +39,9 @@ class Storage(BaseStorage):
 
             normalized_source = os.path.realpath(f)
 
-            if not os.path.exists(destination) or \
-                    normalized_source != os.path.realpath(destination):
+            if not os.path.exists(destination) or normalized_source != os.path.realpath(
+                destination
+            ):
                 # the path is a link, but points to invalid location
                 if os.path.islink(destination):
                     os.remove(destination)

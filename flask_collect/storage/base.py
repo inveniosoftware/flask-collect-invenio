@@ -12,11 +12,11 @@
 
 from __future__ import print_function
 
-from os import path as op, walk
+from os import path as op
+from os import walk
 
 
 class BaseStorage(object):
-
     """Base class for storages."""
 
     def __init__(self, collect, verbose=False):
@@ -30,7 +30,8 @@ class BaseStorage(object):
         :return generator: Walk files
         """
         app_and_blueprints = self.collect.filter(
-            [self.collect.app] + list(self.collect.blueprints.values()))
+            [self.collect.app] + list(self.collect.blueprints.values())
+        )
 
         destination_list = set()
 
@@ -39,15 +40,19 @@ class BaseStorage(object):
                 for root, _, files in walk(bp.static_folder):
                     for f in files:
                         spath = op.join(root, f)
-                        tpath = op.relpath(spath, bp.static_folder.rstrip('/'))
-                        relative = (bp.static_url_path and
-                                    self.collect.static_url and
-                                    bp.static_url_path.startswith(op.join(
-                                        self.collect.static_url, '')))  # noqa
+                        tpath = op.relpath(spath, bp.static_folder.rstrip("/"))
+                        relative = (
+                            bp.static_url_path
+                            and self.collect.static_url
+                            and bp.static_url_path.startswith(
+                                op.join(self.collect.static_url, "")
+                            )
+                        )  # noqa
                         if relative:
-                            tpath = op.join(op.relpath(
-                                bp.static_url_path, self.collect.static_url
-                            ), tpath)
+                            tpath = op.join(
+                                op.relpath(bp.static_url_path, self.collect.static_url),
+                                tpath,
+                            )
 
                         if tpath in destination_list:
                             self.log("{0} already sourced".format(tpath))

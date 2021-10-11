@@ -14,7 +14,6 @@ from .base import BaseStorage
 
 
 class Storage(BaseStorage):
-
     """Dummy storage engine."""
 
     def run(self):
