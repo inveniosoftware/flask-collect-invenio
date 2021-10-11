@@ -30,14 +30,14 @@ Bug tracker
 
 If you have any suggestions, bug reports or
 annoyances please report them to the issue tracker
-at https://github.com/klen/Flask-Collect/issues
+at https://github.com/inveniosoftware/Flask-Collect-Invenio/issues
 
 
 Contributing
 ~~~~~~~~~~~~
 
 Development of flask-collect-invenio happens at github:
-https://github.com/klen/Flask-Collect
+https://github.com/inveniosoftware/Flask-Collect-Invenio
 
 
 Contributors
