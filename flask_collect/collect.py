@@ -4,10 +4,8 @@
 from os import path as op
 
 from flask import current_app
-from flask._compat import string_types
 from werkzeug.local import LocalProxy
 from werkzeug.utils import import_string
-
 
 collect_proxy = LocalProxy(
     lambda: current_app.extensions['collect'].collect
@@ -32,7 +30,7 @@ class _CollectState(object):
             'COLLECT_STORAGE', 'flask_collect.storage.file')
 
         filter_ = app.config.get('COLLECT_FILTER')
-        if filter_ is not None and isinstance(filter_, string_types):
+        if filter_ is not None and isinstance(filter_, str):
             filter_ = import_string(filter_)
         self.filter = filter_ if filter_ is not None else list
 
