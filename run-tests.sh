@@ -4,8 +4,9 @@
 # Copyright (C) 2020 CERN.
 # Copyright (C) 2021 TU Wien.
 #
-# Flask-Collect is free software; you can redistribute it and/or modify
-# it under the terms of the MIT License; see LICENSE file for more details.
+# Flask-Collect-Invenio is free software; you can redistribute it and/or modify
+# it under the terms of the Revised BSD License; see LICENSE file for
+# more details.
 
 # Quit on errors
 set -o errexit

@@ -2,7 +2,7 @@ User's Guide
 ------------
 
 This part of the documentation will show you how to get started in using
-Flask-Collect.
+Flask-Collect-Invenio.
 
 .. toctree::
    :maxdepth: 2
@@ -36,7 +36,8 @@ at https://github.com/klen/Flask-Collect/issues
 Contributing
 ~~~~~~~~~~~~
 
-Development of flask-collect happens at github: https://github.com/klen/Flask-Collect
+Development of flask-collect-invenio happens at github:
+https://github.com/klen/Flask-Collect
 
 
 Contributors

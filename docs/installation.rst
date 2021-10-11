@@ -3,13 +3,13 @@
 Requirements
 =============
 
-- python >= 2.6
+- python >= 3.6
 - Flask >= 0.8
 
 
 Installation
 =============
 
-**Flask-Collect** should be installed using pip: ::
+**Flask-Collect-Invenio** should be installed using pip: ::
 
-    pip install Flask-Collect
+    pip install Flask-Collect-Invenio

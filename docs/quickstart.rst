@@ -5,7 +5,8 @@ Quickstart
 
 .. currentmodule:: flask_collect
 
-Flask-Collect is easy to use.  For the complete guide, checkout out the API documentation on the :class:`Collect` class.
+Flask-Collect-Invenio is easy to use.  For the complete guide, checkout out the
+API documentation on the :class:`Collect` class.
 
 You can run: ::
 

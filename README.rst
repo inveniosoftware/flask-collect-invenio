@@ -1,30 +1,24 @@
-Flask-Collect
-#############
+Flask-Collect-Invenio
+#####################
 
 .. _description:
 
-**Flask-Collect** is an extension for Flask that helps collecting static files.
+**Flask-Collect-Invenio** is a fork and drop-in replacement of the original
+**Flask-Collect** extension with adjustments to make it compatible with Flask 2.x.
 
-Serving static files with *Flask* -- bad idea for production, this tool will
-help you collect them in one command. It checks application and blueprints for
-static files and copy them to specific folder (saves related paths).
+Even though serving static files with *Flask* is a bad idea in a production
+environment, this tool will help you collect them in one command.
+It checks application and blueprints for static files and copies them to a
+specific folder (saves related paths).
 
 .. _badges:
 
-.. image:: http://img.shields.io/travis/klen/Flask-Collect.svg?style=flat-square
-    :target: http://travis-ci.org/klen/Flask-Collect
-    :alt: Build Status
-
-.. image:: http://img.shields.io/coveralls/klen/Flask-Collect.svg?style=flat-square
-    :target: https://coveralls.io/r/klen/Flask-Collect
-    :alt: Coverals
-
-.. image:: http://img.shields.io/pypi/v/flask-collect.svg?style=flat-square
-    :target: https://pypi.python.org/pypi/flask-collect
+.. image:: https://img.shields.io/pypi/v/flask-collect-invenio.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/flask-collect-invenio
     :alt: Version
 
-.. image:: http://img.shields.io/pypi/dm/flask-collect.svg?style=flat-square
-    :target: https://pypi.python.org/pypi/flask-collect
+.. image:: https://img.shields.io/pypi/dm/flask-collect-invenio.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/flask-collect-invenio
     :alt: Downloads
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
@@ -33,7 +27,7 @@ static files and copy them to specific folder (saves related paths).
 
 .. _documentation:
 
-**Docs are available at** http://flask-collect.readthedocs.org/. **Pull
+**Docs are available at** http://flask-collect-invenio.readthedocs.org/. **Pull
 requests with documentation enhancements and/or fixes are awesome and most
 welcome.**
 
@@ -47,7 +41,7 @@ welcome.**
 Requirements
 =============
 
-- python (2.6, 2.7, 3.3)
+- Python 3.6+
 - Flask_ >= 0.10.1
 
 
@@ -56,9 +50,9 @@ Requirements
 Installation
 ============
 
-**Flask-Collect** should be installed using pip: ::
+**Flask-Collect-Invenio** should be installed using pip: ::
 
-    pip install Flask-Collect
+    pip install Flask-Collect-Invenio
 
 
 .. _setup:
@@ -66,13 +60,13 @@ Installation
 Setup
 =====
 
-Flask-Collect settings (default values): ::
+Flask-Collect-Invenio settings (default values): ::
 
     # Target static dir
     COLLECT_STATIC_ROOT = <APP.ROOT_PATH>/static
     COLLECT_STORAGE = 'flask_collect.storage.file'
 
-Initialize Flask-Collect extension: ::
+Initialize Flask-Collect-Invenio extension: ::
 
     from flask_collect import Collect
 
@@ -81,7 +75,7 @@ Initialize Flask-Collect extension: ::
     collect = Collect()
     collect.init_app(app)
 
-If you use Flask-Script_, activate Flask-Collect commands: ::
+If you use Flask-Script_, activate Flask-Collect-Invenio commands: ::
 
     from flask_collect import Collect
 
@@ -110,8 +104,8 @@ If you configure Flask via a factory function::
 
 .. _usage:
 
-Use Flask-Collect
-=================
+Use Flask-Collect-Invenio
+=========================
 
 From any python script: ::
 
@@ -140,7 +134,7 @@ to the issue tracker at https://github.com/klen/Flask-Collect/issues
 Contributors
 ============
 
-Maintainer: Kirill Klenov (horneds@gmail.com)
+Original Author: Kirill Klenov (horneds@gmail.com)
 
 Also see the `CONTRIBUTORS.rst
 <https://github.com/klen/Flask-Collect/blob/develop/CONTRIBUTORS.rst>`_
@@ -149,7 +143,7 @@ file.
 Contributing
 ============
 
-Development of flask-collect happens at github:
+Development of flask-collect-invenio happens at github:
 https://github.com/klen/Flask-Collect
 
 

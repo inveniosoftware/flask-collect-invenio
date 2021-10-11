@@ -3,8 +3,8 @@
 Configuration
 =============
 
-The following configuration values exist for Flask-Collect.
-Flask-Collect loads these values from your main Flask config which can
+The following configuration values exist for Flask-Collect-Invenio.
+Flask-Collect-Invenio loads these values from your main Flask config which can
 be populated in various ways.  Note that some of those cannot be modified
 after the engine was created so make sure to configure as early as
 possible and to not modify them at runtime.

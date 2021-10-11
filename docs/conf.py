@@ -1,4 +1,13 @@
 # -*- coding: utf-8 -*-
+#
+# This file is part of Flask-Collect-Invenio.
+# Copyright (C) 2012 - 2016 Kirill Klenov.
+# Copyright (C) 2021        TU Wien.
+#
+# Flask-Collect-Invenio is free software; you can redistribute it and/or modify
+# it under the terms of the Revised BSD License; see LICENSE file for
+# more details.
+
 import os
 import re
 import datetime
@@ -15,17 +24,17 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx']
 templates_path = ['_templates']
 source_suffix = '.rst'
 master_doc = 'index'
-project = u'Flask-Collect'
+project = u'Flask-Collect-Invenio'
 copyright = u'%s, Kirill Klenov' % datetime.datetime.now().year
 exclude_patterns = ['_build']
-htmlhelp_basename = 'Flask-Collectdoc'
+htmlhelp_basename = 'Flask-Collect-Inveniodoc'
 latex_documents = [
-    ('index', 'Flask-Collect.tex', u'Flask-Collect Documentation',
+    ('index', 'Flask-Collect-Invenio.tex', u'Flask-Collect-Invenio Documentation',
         u'Kirill Klenov', 'manual'),
 ]
 latex_elements = {}
 man_pages = [
-    ('index', 'flask-mixer', u'Flask-Collect Documentation',
+    ('index', 'flask-mixer', u'Flask-Collect-Invenio Documentation',
      [u'Kirill Klenov'], 1)
 ]
 pygments_style = 'sphinx'

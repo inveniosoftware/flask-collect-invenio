@@ -5,3 +5,4 @@
 * Philippe Ombredanne (https://github.com/pombredanne)
 * Steve Schwarz (https://github.com/saschwarz)
 * Yoan Blanc (https://github.com/greut)
+* Maximilian Moser (https://github.com/max-moser)

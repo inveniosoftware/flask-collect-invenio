@@ -1,15 +1,15 @@
 :orphan:
 
-Welcome to Flask-Collect
-========================
+Welcome to Flask-Collect-Invenio
+================================
 
-Welcome to Flask-Collect's documentation.
+Welcome to Flask-Collect-Invenio's documentation.
 
 .. == description ==
 .. _description:
 
-Flask-Collect
--------------
+Flask-Collect-Invenio
+---------------------
 
 .. automodule:: flask_collect
 
@@ -24,7 +24,7 @@ User's Guide
 ------------
 
 This part of the documentation will show you how to get started in using
-Flask-Collect.
+Flask-Collect-Invenio.
 
 .. toctree::
    :maxdepth: 2
