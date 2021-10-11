@@ -27,6 +27,9 @@ static files and copy them to specific folder (saves related paths).
     :target: https://pypi.python.org/pypi/flask-collect
     :alt: Downloads
 
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
+
 
 .. _documentation:
 

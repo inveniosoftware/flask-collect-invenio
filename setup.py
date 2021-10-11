@@ -7,7 +7,7 @@ Flask-Collect
 Setup module.
 
 """
-import re
+import os
 import sys
 
 from os import path
@@ -21,55 +21,68 @@ def _read(fname):
     except IOError:
         return ''
 
-_meta = _read('flask_collect/__init__.py')
-_license = re.search(r'^__license__\s*=\s*"(.*)"', _meta, re.M).group(1)
-_version = re.search(r'^__version__\s*=\s*"(.*)"', _meta, re.M).group(1)
+# Get the version string. Cannot be done with import!
+g = {}
+with open(os.path.join("flask_collect", "version.py"), "rt") as fp:
+    exec(fp.read(), g)
+    version = g["__version__"]
 
-needs_pytest = {'pytest', 'test', 'ptr'}.intersection(sys.argv)
+setup_requires = [
+    "pytest-runner>=3.0,<5"
+]
 
 install_requires = [
-    l for l in _read('requirements.txt').split('\n')
-    if l and not l.startswith('#')]
+    "Flask>=0.10.1",
+]
 
-tests_requires = [
-    l for l in _read('requirements-test.txt').split('\n')
-    if l and not l.startswith('#')]
+tests_require = [
+    "black>=21.9b0",
+    "check-manifest>=0.42",
+    "coverage>=5.3,<6",
+    "pytest>=6,<7",
+    "pytest-cov>=2.10.1",
+    "pytest-flask>=1.0.0",
+    "pytest-isort>=1.2.0",
+    "pytest-pycodestyle>=2.2.0",
+    "pytest-pydocstyle>=2.2.0",
+]
+
+extras_require = {
+    "docs": ["Sphinx>=3",],
+    "tests": tests_require,
+}
+
+extras_require["all"] = []
+for reqs in extras_require.values():
+    extras_require["all"].extend(reqs)
 
 
-META_DATA = dict(
-    name='Flask-Collect',
-    version=_version,
-    license=_license,
+setup(
+    name='Flask-Collect-Invenio',
+    version=version,
     description=_read('DESCRIPTION'),
     long_description=_read('README.rst'),
-    platforms=('Any'),
     keywords="flask static deploy".split(),
-
+    license="BSD",
     author='Kirill Klenov',
     author_email='horneds@gmail.com',
-    url=' http://github.com/klen/Flask-Collect',
+    url=' http://github.com/inveniosoftware/Flask-Collect-Invenio',
+    packages=find_packages(),
+    include_package_data=True,
+    platforms='any',
+    extras_require=extras_require,
+    install_requires=install_requires,
+    setup_requires=setup_requires,
+    tests_require=tests_require,
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
-        'Natural Language :: English',
-        'Natural Language :: Russian',
         'Operating System :: OS Independent',
-        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python',
+        'Framework :: Flask',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Utilities',
     ],
-    packages=find_packages(),
-    include_package_data=True,
-    install_requires=install_requires,
-    setup_requires=[
-        'pytest-runner',
-    ] if needs_pytest else [],
-    tests_require=tests_requires,
 )
-
-
-if __name__ == "__main__":
-    setup(**META_DATA)

@@ -1,11 +1,20 @@
 include LICENSE
 include MANIFEST.in
 include CONTRIBUTORS.rst
+include DESCRIPTION
 include README.rst
-include requirements.txt
+include CHANGES.rst
 
 recursive-include flask_collect *
+recursive-include docs *
 
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
 recursive-exclude * *.orig
+recursive-exclude tests *
+recursive-exclude docs/_build *
+
+exclude *.ini
+exclude .coveragerc
+exclude .editorconfig
+exclude run-tests.sh

@@ -8,3 +8,6 @@
 /_build
 /build
 /dist
+docs/_build
+Pipfile
+Pipfile.lock
