@@ -1,12 +1,7 @@
 #!/usr/bin/env sh
-# -*- coding: utf-8 -*-
-#
-# Copyright (C) 2020 CERN.
-# Copyright (C) 2021 TU Wien.
-#
-# Flask-Collect-Invenio is free software; you can redistribute it and/or modify
-# it under the terms of the Revised BSD License; see LICENSE file for
-# more details.
+# SPDX-FileCopyrightText: 2020 CERN.
+# SPDX-FileCopyrightText: 2021 TU Wien.
+# SPDX-License-Identifier: BSD-3-Clause
 
 # Quit on errors
 set -o errexit
