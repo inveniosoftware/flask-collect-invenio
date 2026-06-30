@@ -1,0 +1,79 @@
+# SPDX-FileCopyrightText: 2012-2016 Kirill Klenov.
+# SPDX-FileCopyrightText: 2021-2026 TU Wien.
+# SPDX-License-Identifier: MIT
+
+[project]
+name = "Flask-Collect-Invenio"
+description = "Flask-Collect-Invenio -- Collect static files in Flask application"
+readme = "README.rst"
+requires-python = ">=3.7"
+license = "BSD-3-Clause"
+authors = [
+  { name = "Kirill Klenov", email = "horneds@gmail.com" },
+]
+keywords = [
+  "deploy",
+  "flask",
+  "static",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Framework :: Flask",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: BSD License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Utilities",
+]
+dependencies = [
+  "flask>=0.10.1",
+]
+dynamic = ["version"]
+
+[project.urls]
+Repository = " http://github.com/inveniosoftware/Flask-Collect-Invenio"
+
+[project.optional-dependencies]
+docs = [
+  "sphinx>=3",
+]
+tests = [
+  "black>=21.0",
+  "coverage>=5.3,<6",
+  "pytest-cov>=2.10.1",
+  "pytest-flask>=1.0.0",
+  "pytest-isort>=1.2.0",
+  "pytest-black>=0.6.0",
+  "pytest-pydocstyle>=2.2.0",
+  "pytest>=6,<9",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "flask_collect/version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = [
+  "/flask_collect",
+]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/flask_collect",
+]
+
+[tool.isort]
+profile = "black"
+
+[tool.pydocstyle]
+add_ignore = "D401,D403"
+
+[tool.pytest.ini_options]
+addopts = '--black --isort --pydocstyle --doctest-glob="*.rst" --doctest-modules --cov=flask_collect --cov-report=term-missing'
+testpaths = "tests flask_collect"
+live_server_scope = "module"
