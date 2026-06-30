@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 """Define *Flask* extension."""
+
 from os import path as op
 
 from flask import current_app
