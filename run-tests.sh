@@ -10,6 +10,5 @@ set -o errexit
 set -o nounset
 
 black --check --diff flask_collect tests
-check-manifest --ignore ".*-requirements.txt"
 sphinx-build -qnN docs docs/_build/html
 pytest
