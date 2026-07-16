@@ -1,3 +1,11 @@
+2026-07-16
+
+    * Version v1.4.1
+    * Use centralized GitHub action workflows
+    * Migrate from setuptools to hatchling
+    * Reformat with black and fix linter complaints
+    * Update license headers to use SPDX
+
 2021-10-11
 
     * Version 1.4.0
